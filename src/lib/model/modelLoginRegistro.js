@@ -13,9 +13,8 @@ export const createUserWithEmailAndPassword = (email, pass) => {
 export const cerrarSesion = () => {
   return firebase.auth().signOut();
 };
-export const userCurrent = () => {
-  return firebase.auth().currentUser;
-};
+export const userCurrent = () => firebase.auth().currentUser;
+
 // creando una función que guarde los datos del google y facebook en la bd
 export const saveDataGF = (id, name, email, foto) => {
   firebase.firestore().collection('users').doc(id).set({
