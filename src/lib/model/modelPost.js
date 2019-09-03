@@ -13,6 +13,7 @@ export const getPost = (datapost) => {
       const array = [];
       querySnapshot.forEach((doc) => {
         array.push({ id: doc.id, ...doc.data() });
+        console.log(array);
       });
       datapost(array);
     });
@@ -37,6 +38,7 @@ export const deleteLikeDb = (iduser, idPost) => firebase.firestore().collection(
 export const getLike = (idPost, contadorLikes, likesPintadosPost) => {
   firebase.firestore().collection('posts').doc(idPost).collection('likes')
     .onSnapshot((querySnapshot) => {
+      
       const likes = [];
       querySnapshot.forEach((doc) => {
         likes.push({ id: doc.id, ...doc.data() });
