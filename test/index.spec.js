@@ -1,8 +1,11 @@
-import { signInWithEmailAndPassword, signInGoogle, signInFacebook, createUserWithEmailAndPassword,
-cerrarSesion, userCurrent } from '../src/lib/model/modelLoginRegistro.js';
+import {
+  signInWithEmailAndPassword, signInGoogle, signInFacebook, createUserWithEmailAndPassword,
+  cerrarSesion, userCurrent,
+} from '../src/lib/model/modelLoginRegistro.js';
 
 // configuracion de firebase mock
 const firebasemock = require('firebase-mock');
+
 const mockauth = new firebasemock.MockFirebase();
 const mockdatabase = new firebasemock.MockFirebase();
 mockauth.autoFlush();
@@ -55,6 +58,6 @@ describe('userCurrent', () => {
         const user = userCurrent();
         expect(user.email).toEqual('laboratoria@lab.com');
         done();
-      })
-  })
-})
+      });
+  });
+});

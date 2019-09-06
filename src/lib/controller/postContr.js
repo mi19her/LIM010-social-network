@@ -1,11 +1,10 @@
 import { userCurrent } from '../model/modelLoginRegistro.js';
 import { addPostFirebase, deleteLikeDb, addLikeDb, editPost } from '../model/modelPost.js';
-// import { db } from '../../main.js';
 
 const allDatePost = (fullDate) => {
   const getDate = fullDate.getDate();
   const getMonth = fullDate.getMonth() + 1;
-  const getFullYear = fullDate.getFullYear(); //Devuelve el año
+  const getFullYear = fullDate.getFullYear(); // Devuelve el año
 
   const minutes = fullDate.getMinutes();
   const seconds = fullDate.getSeconds();
@@ -18,7 +17,6 @@ const allDatePost = (fullDate) => {
 };
 
 export const textPost = () => {
-  event.preventDefault();
   const allDate = new Date();
   const date = allDatePost(allDate);
   const txtpublicacion = document.getElementById('publicacion').value;
