@@ -8,12 +8,13 @@ export const pintarInfoPerfil = (userName, userCorreo,userfoto) => {
       // El usuario ha iniciado sesión.
       const id = firebase.auth().currentUser.uid;
       // Obtención de datos de un documento
-      firebase.firestore().collection('users').where("ID", "==", id).get().then((querySnapshot) => {
+      firebase.firestore().collection('users').where("ID", "==", id).get()
+      .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-        userName.value = doc.data().Nombre;
-        userCorreo.value = doc.data().Email;
-        userfoto.src = doc.data().Foto;
-      });
+          userName.value = doc.data().Nombre;
+          userCorreo.value = doc.data().Email;
+          userfoto.src = doc.data().Foto;
+        });
     }).catch((error) => {
       console.log("Error al obtener el documento", error);
     });
