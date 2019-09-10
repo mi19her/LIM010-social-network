@@ -101,7 +101,6 @@ export const itemPost = (publication) => {
 
     btnLike.addEventListener('click', (event) => {
       event.preventDefault();
-      console.log(event.target.dataset.like, 'hice click');
       if (event.target.dataset.like === '0') {
         event.target.dataset.like = '1';
         addLike(publication.id);
@@ -115,7 +114,6 @@ export const itemPost = (publication) => {
       }
     });
     const pintarComentario = (comment) => {
-      console.log(comment);
       comment.forEach((element) => {
         containerCommentPost.appendChild(itemComment(element));
       });
@@ -125,7 +123,6 @@ export const itemPost = (publication) => {
     btnComentarioPost.addEventListener('click', (e) => {
       e.preventDefault();
       const nuevoComentario = divElement.querySelector(`#idcomentario-${publication.id}`).value;
-      console.log(nuevoComentario);
       if (nuevoComentario !== '') {
         containerCommentPost.innerHTML = '';
         addCommentPost(userCurrent().uid, publication.id, userCurrent().email, nuevoComentario);

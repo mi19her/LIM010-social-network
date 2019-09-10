@@ -11,7 +11,7 @@ body{
 }
 .login{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;  
     font-family: 'Pacifico', cursive;
     background: white;
@@ -426,8 +426,8 @@ header {
     }
     .logoIzquierda{
         width: 50%;
-        background-image: url(../src/img/travel.gif);
-        height: -webkit-fill-available;
+        background-image: url(../src/img/logo.png);
+        /* height: -webkit-fill-available; */
         background-repeat: no-repeat;
         background-size: cover;
     }

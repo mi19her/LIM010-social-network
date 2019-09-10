@@ -22,13 +22,6 @@ export const textPost = () => {
   const txtpublicacion = document.getElementById('publicacion').value;
   const optionsPost = document.getElementById('options').value;
   addPostFirebase(userCurrent().email, txtpublicacion, userCurrent().uid, date, optionsPost); // pinta en el home
-  // .then(() => {
-  //   document.querySelector('#publicacion').value = '';
-  //   // console.log('Document written with ID: ', res.id);
-  // })
-  // .catch(() => {
-  //   // console.error('Error adding document: ', error);.
-  // });
 };
 
 /* likes */

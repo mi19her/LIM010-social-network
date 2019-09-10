@@ -1,7 +1,7 @@
 import { cerrarSesion } from '../model/modelLoginRegistro.js';
-import { itemPost } from '../view/post-view.js';
+import { itemPost } from './post-view.js';
 import { textPost } from '../controller/postContr.js';
-import { userTemplate } from '../view/user-view.js';
+import { userTemplate } from './user-view.js';
 
 export default (data) => {
   const viewHome = `
@@ -51,13 +51,11 @@ export default (data) => {
   divElem.innerHTML = viewHome;
   const contenedorUser = divElem.querySelector('#datos-user');
   contenedorUser.appendChild(userTemplate());
-  // const userName = divElem.querySelector('#name');
-  // const userCorreo = divElem.querySelector('#correo');
-  // const userImage = divElem.querySelector('#foto');
   const btnCerrar = divElem.querySelector('#btn-cerrar');
   const btnPerfil = divElem.querySelector('#btn-perfil');
   const btnCompartir = divElem.querySelector('#btn-compartir');
   const contenedorPost = divElem.querySelector('#public-posts');
+  const contentPublic = divElem.querySelector('#publicacion');
 
   data.forEach((element) => {
     contenedorPost.appendChild(itemPost(element));
@@ -70,11 +68,11 @@ export default (data) => {
   btnPerfil.addEventListener('click', () => {
     window.location.hash = '#/perfil';
   });
-  // obtenerInfo(userName, userCorreo, userImage); // pinta en el home esos datos de argumento
-  btnCompartir.addEventListener('click', (e) => {
-    e.preventDefault();
-    textPost(); // Guarda en la bd
-  });
-
+  if (contentPublic.value !== ' ') {
+    btnCompartir.addEventListener('click', (e) => {
+      e.preventDefault();
+      textPost();
+    });
+  }
   return divElem;
 };

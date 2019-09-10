@@ -6,7 +6,7 @@ export const userTemplate = () => {
         <div class="imagen-fondo-perfil">
         </div>
             <div class="usuario">
-                <img class="foto-user" id="foto" src="./img/profile.png" />
+                <img class="foto-user" id="foto" src="" />
                 <div class="datos">
                     <label id="name" class="profile-name" for="name"></label>
                     <label id="correo" class="profile-name" for="name"></label>
