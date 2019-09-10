@@ -4,6 +4,7 @@ import { textPost } from '../controller/postContr.js';
 import { userTemplate } from './user-view.js';
 
 export default (data) => {
+  const divElem = document.createElement('div');
   const viewHome = `
   <header class="barra-menu" id="barra-menu">
   <div class="contenedor-logo">
@@ -46,8 +47,9 @@ export default (data) => {
         </div>
       </div>
     </div>
-  </div>`;
-  const divElem = document.createElement('div');
+</div>
+</div>`;
+ 
   divElem.innerHTML = viewHome;
   const contenedorUser = divElem.querySelector('#datos-user');
   contenedorUser.appendChild(userTemplate());
